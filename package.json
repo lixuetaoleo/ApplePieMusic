@@ -20,5 +20,14 @@
   "bugs": {
     "url": "https://github.com/lixuetaoleo/ApplePieMusic/issues"
   },
-  "homepage": "https://github.com/lixuetaoleo/ApplePieMusic#readme"
+  "homepage": "https://github.com/lixuetaoleo/ApplePieMusic#readme",
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router": "^5.2.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.4.0",
+    "webpack-cli": "^4.2.0"
+  }
 }
