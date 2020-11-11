@@ -18,4 +18,11 @@ module.exports = {
     ],
   },
   plugins: [new HtmlWebpackPlugin({ template: './public/index.html' })],
+  devServer: {
+    open: true,
+    compress: true,
+    hot: true,
+    historyApiFallback: true,
+    // contentBase: path.join(__dirname, 'build')
+  },
 };
