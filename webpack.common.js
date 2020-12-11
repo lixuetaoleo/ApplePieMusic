@@ -1,10 +1,10 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
   entry: {
     app: './src/index.jsx',
   },
@@ -13,7 +13,7 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.less'],
   },
   module: {
     rules: [
@@ -22,6 +22,7 @@ module.exports = {
         test: /\.less$/,
         use: [
           { loader: 'style-loader' },
+          // { loader: MiniCssExtractPlugin.loader },
           {
             loader: 'css-loader',
             options: {
@@ -37,20 +38,35 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
     new CleanWebpackPlugin(),
+    // new ESLintPlugin({
+    //   extensions: ['js', 'jsx'],
+    //   // emitError: true,
+    //   // failOnError: true
+    // }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
       title: 'ApplePie Music',
     }),
+    new MiniCssExtractPlugin(),
   ],
-  devServer: {
-    open: true,
-    compress: true,
-    hot: true,
-    historyApiFallback: true,
-    // contentBase: path.join(__dirname, 'build')
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
   },
 };
