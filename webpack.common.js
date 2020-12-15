@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -53,11 +52,6 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    // new ESLintPlugin({
-    //   extensions: ['js', 'jsx'],
-    //   // emitError: true,
-    //   // failOnError: true
-    // }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
       title: 'ApplePie Music',
