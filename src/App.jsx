@@ -1,8 +1,9 @@
+/* eslint-disable import/no-anonymous-default-export */
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
-import Recommend from './pages/Recommend';
-import Home from './pages/Home';
-import Search from './pages/Search';
+import { Switch, Route } from 'react-router-dom';
+import Recommend from './pages/Recommend/index';
+import Home from './pages/Home/index';
+import Search from './pages/Search/index';
 import NavBar from './components/NavBar';
 
 export default function () {
