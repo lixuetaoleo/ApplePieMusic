@@ -13,7 +13,7 @@ module.exports = merge(common, {
       // formatter: require.resolve('react-dev-utils/eslintFormatter'),
       eslintPath: require.resolve('eslint'),
       context: path.resolve(__dirname, 'src'),
-      cache: true,
+      cache: false,
       // ESLint class options
       cwd: path.resolve(__dirname),
       resolvePluginsRelativeTo: __dirname,
