@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import style from './navbar.module.less';
+import style from './navbar.module.scss';
 import { Tab, Tabs, TabList } from 'react-tabs';
 
 function NavBar() {

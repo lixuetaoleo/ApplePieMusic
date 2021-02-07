@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './pagetitle.module.less';
+import style from './pagetitle.module.scss';
 
 function PageTitle(props) {
   return (
